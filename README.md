@@ -56,16 +56,12 @@ This client has the following external dependencies:
 
 ### Launchers
 
-DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/code-examples-node/). The Launcher contains a set of 6 common use cases and associated source files. These examples use DocuSign&#39;s [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/authcode-get-token/) flow.
-
+DocuSign provides a sample application referred to as a [Launcher](https://github.com/docusign/code-examples-node/). The Launcher contains a set of 36 common use cases and associated source files. These examples use either DocuSign's Authorization Code Grant or JSON Web Tokens (JWT) flows.
 ## OAuth Implementations
 
 For details regarding which type of OAuth grant will work best for your DocuSign integration, see the [Monitor API Authentication Overview](https://developers.docusign.com/docs/monitor-api/monitor101/auth/) guide located on the [DocuSign Developer Center](https://developers.docusign.com/).
 
-For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/platform/auth/authcode/authcode-get-token/) or [JWT](https://developers.docusign.com/platform/auth/jwt/) flow.
-
-There are other use-case scenarios, such as **single-page applications** (SPA) that use **Cross-Origin Resource Sharing** (CORS), or where there may not be a user to interact with your Service Account. For these use cases, DocuSign also supports [JWT](https://developers.docusign.com/platform/auth/jwt/jwt-get-token/) and [Implicit](https://developers.docusign.com/platform/auth/implicit/implicit-get-token/) grants. For Code eExamples, see the links below:
-
+The Monitor API can only be used with JWT authentication.
 
 ## Support
 
