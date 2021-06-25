@@ -1,6 +1,6 @@
 /**
- * DocuSign Monitor API - v2
- * An API for an integrator to access the features of DocuSign Monitor
+ * Monitor API
+ * Use the DocuSign Monitor API to receive a data feed containing atypical security events within your DocuSign account. This data goes directly to an integrated application or website.
  *
  * OpenAPI spec version: v2.0
  * Contact: devcenter@docusign.com
@@ -67,10 +67,8 @@ Required scopes: impersonation
      * @param {String} version The requested API version
      * @param {String} dataSetName The name of the dataset to stream
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cursor Starting cursor position
-     * @param {Number} optsOrCallback.limit Max number of results to return (default to 1000)
-     * @param {String} optsOrCallback.cursor2 The cursor value to continue querying the data with. For an intial call, use empty string
-     * @param {Number} optsOrCallback.limit2 The maximum number of records to return, minimum of 1, maximum of 2000. Defaults to 1000 if no value is provided
+     * @param {String} optsOrCallback.cursor The cursor value to continue querying the data with. For an intial call, use empty string
+     * @param {Number} optsOrCallback.limit The maximum number of records to return, minimum of 1, maximum of 2000. Defaults to 1000 if no value is provided (default to 1000)
      * @param {module:api/DataSetApi~getStreamCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CursoredResult}
      */
@@ -107,9 +105,7 @@ Required scopes: impersonation
       };
       var queryParams = {
         'cursor': optsOrCallback['cursor'],
-        'limit': optsOrCallback['limit'],
-        'cursor': optsOrCallback['cursor2'],
-        'limit': optsOrCallback['limit2']
+        'limit': optsOrCallback['limit']
       };
       var headerParams = {
       };
