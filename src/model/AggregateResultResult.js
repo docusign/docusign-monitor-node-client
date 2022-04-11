@@ -21,20 +21,20 @@
     if (!root.DocusignMonitor) {
       root.DocusignMonitor = {};
     }
-    root.DocusignMonitor.CursoredResult = factory(root.DocusignMonitor.ApiClient);
+    root.DocusignMonitor.AggregateResultResult = factory(root.DocusignMonitor.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The CursoredResult model module.
-   * @module model/CursoredResult
+   * The AggregateResultResult model module.
+   * @module model/AggregateResultResult
    */
 
   /**
-   * Constructs a new <code>CursoredResult</code>.
-   * @alias module:model/CursoredResult
+   * Constructs a new <code>AggregateResultResult</code>.
+   * @alias module:model/AggregateResultResult
    * @class
    */
   var exports = function() {
@@ -44,18 +44,18 @@
   };
 
   /**
-   * Constructs a <code>CursoredResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>AggregateResultResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CursoredResult} obj Optional instance to populate.
-   * @return {module:model/CursoredResult} The populated <code>CursoredResult</code> instance.
+   * @param {module:model/AggregateResultResult} obj Optional instance to populate.
+   * @return {module:model/AggregateResultResult} The populated <code>AggregateResultResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('endCursor')) {
-        obj['endCursor'] = ApiClient.convertToType(data['endCursor'], 'String');
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('data')) {
         obj['data'] = ApiClient.convertToType(data['data'], [Object]);
@@ -65,9 +65,9 @@
   }
 
   /**
-   * @member {String} endCursor
+   * @member {String} name
    */
-  exports.prototype['endCursor'] = undefined;
+  exports.prototype['name'] = undefined;
   /**
    * @member {Array.<Object>} data
    */
