@@ -1,5 +1,5 @@
 /**
- * DocuSign Monitor API - v2
+ * Monitor API
  * An API for an integrator to access the features of DocuSign Monitor
  *
  * OpenAPI spec version: v2.0
@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Aggregation', 'model/Filter'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Aggregation'), require('./Filter'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.DocusignMonitor) {
       root.DocusignMonitor = {};
     }
-    root.DocusignMonitor.WebQuery = factory(root.DocusignMonitor.ApiClient, root.DocusignMonitor.Aggregation, root.DocusignMonitor.Filter);
+    root.DocusignMonitor.WebQuery = factory(root.DocusignMonitor.ApiClient);
   }
-}(this, function(ApiClient, Aggregation, Filter) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -55,10 +55,10 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('filters')) {
-        obj['filters'] = ApiClient.convertToType(data['filters'], [Filter]);
+        obj['filters'] = ApiClient.convertToType(data['filters'], [Object]);
       }
       if (data.hasOwnProperty('aggregations')) {
-        obj['aggregations'] = ApiClient.convertToType(data['aggregations'], [Aggregation]);
+        obj['aggregations'] = ApiClient.convertToType(data['aggregations'], [Object]);
       }
       if (data.hasOwnProperty('queryScope')) {
         obj['queryScope'] = ApiClient.convertToType(data['queryScope'], 'String');
@@ -71,11 +71,11 @@
   }
 
   /**
-   * @member {Array.<module:model/Filter>} filters
+   * @member {Array.<Object>} filters
    */
   exports.prototype['filters'] = undefined;
   /**
-   * @member {Array.<module:model/Aggregation>} aggregations
+   * @member {Array.<Object>} aggregations
    */
   exports.prototype['aggregations'] = undefined;
   /**
@@ -95,22 +95,10 @@
    */
   exports.QueryScopeEnum = {
     /**
-     * value: "AccountId"
-     * @const
-     */
-    accountId: "AccountId",
-
-    /**
      * value: "OrganizationId"
      * @const
      */
-    organizationId: "OrganizationId",
-
-    /**
-     * value: "None"
-     * @const
-     */
-    none: "None"
+    organizationId: "OrganizationId"
   };
 
 

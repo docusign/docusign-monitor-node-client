@@ -1,6 +1,6 @@
 /**
  * Monitor API
- * Use the DocuSign Monitor API to receive a data feed containing atypical security events within your DocuSign account. This data goes directly to an integrated application or website.
+ * An API for an integrator to access the features of DocuSign Monitor
  *
  * OpenAPI spec version: v2.0
  * Contact: devcenter@docusign.com
@@ -11,12 +11,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Configuration', 'ApiClient', 'model/CursoredResult', 'api/DataSetApi'], factory);
+    define(['Configuration', 'ApiClient', 'model/AggregateResult', 'model/AggregateResultResult', 'model/CursoredResult', 'model/WebQuery', 'api/DataSetApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/CursoredResult'), require('./api/DataSetApi'));
+    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/AggregateResult'), require('./model/AggregateResultResult'), require('./model/CursoredResult'), require('./model/WebQuery'), require('./api/DataSetApi'));
   }
-}(function(Configuration, ApiClient, CursoredResult, DataSetApi) {
+}(function(Configuration, ApiClient, AggregateResult, AggregateResultResult, CursoredResult, WebQuery, DataSetApi) {
   'use strict';
 
   /**
@@ -61,10 +61,25 @@
      */
     ApiClient: ApiClient,
     /**
+     * The AggregateResult model constructor.
+     * @property {module:model/AggregateResult}
+     */
+    AggregateResult: AggregateResult,
+    /**
+     * The AggregateResultResult model constructor.
+     * @property {module:model/AggregateResultResult}
+     */
+    AggregateResultResult: AggregateResultResult,
+    /**
      * The CursoredResult model constructor.
      * @property {module:model/CursoredResult}
      */
     CursoredResult: CursoredResult,
+    /**
+     * The WebQuery model constructor.
+     * @property {module:model/WebQuery}
+     */
+    WebQuery: WebQuery,
     /**
      * The DataSetApi service constructor.
      * @property {module:api/DataSetApi}

@@ -12,29 +12,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/AggregateResultResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./AggregateResultResult'));
   } else {
     // Browser globals (root is window)
     if (!root.DocusignMonitor) {
       root.DocusignMonitor = {};
     }
-    root.DocusignMonitor.CursoredResult = factory(root.DocusignMonitor.ApiClient);
+    root.DocusignMonitor.AggregateResult = factory(root.DocusignMonitor.ApiClient, root.DocusignMonitor.AggregateResultResult);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, AggregateResultResult) {
   'use strict';
 
 
   /**
-   * The CursoredResult model module.
-   * @module model/CursoredResult
+   * The AggregateResult model module.
+   * @module model/AggregateResult
    */
 
   /**
-   * Constructs a new <code>CursoredResult</code>.
-   * @alias module:model/CursoredResult
+   * Constructs a new <code>AggregateResult</code>.
+   * @alias module:model/AggregateResult
    * @class
    */
   var exports = function() {
@@ -44,34 +44,27 @@
   };
 
   /**
-   * Constructs a <code>CursoredResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>AggregateResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CursoredResult} obj Optional instance to populate.
-   * @return {module:model/CursoredResult} The populated <code>CursoredResult</code> instance.
+   * @param {module:model/AggregateResult} obj Optional instance to populate.
+   * @return {module:model/AggregateResult} The populated <code>AggregateResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('endCursor')) {
-        obj['endCursor'] = ApiClient.convertToType(data['endCursor'], 'String');
-      }
-      if (data.hasOwnProperty('data')) {
-        obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+      if (data.hasOwnProperty('result')) {
+        obj['result'] = ApiClient.convertToType(data['result'], [AggregateResultResult]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} endCursor
+   * @member {Array.<module:model/AggregateResultResult>} result
    */
-  exports.prototype['endCursor'] = undefined;
-  /**
-   * @member {Array.<Object>} data
-   */
-  exports.prototype['data'] = undefined;
+  exports.prototype['result'] = undefined;
 
 
 
