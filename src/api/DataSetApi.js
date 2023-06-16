@@ -12,18 +12,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-	define(['Configuration', 'ApiClient', 'model/AggregateResult', 'model/CursoredResult', 'model/WebQuery'], factory);
+	define(['Configuration', 'ApiClient', 'model/CursoredResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/AggregateResult'), require('../model/CursoredResult'), require('../model/WebQuery'));
+    module.exports = factory(require('../Configuration'), require('../ApiClient'), require('../model/CursoredResult'));
   } else {
     // Browser globals (root is window)
     if (!root.DocusignMonitor) {
       root.DocusignMonitor = {};
     }
-    root.DocusignMonitor.DataSetApi = factory(root.DocusignMonitor.Configuration, root.DocusignMonitor.ApiClient, root.DocusignMonitor.AggregateResult, root.DocusignMonitor.CursoredResult, root.DocusignMonitor.WebQuery);
+    root.DocusignMonitor.DataSetApi = factory(root.DocusignMonitor.Configuration, root.DocusignMonitor.ApiClient, root.DocusignMonitor.CursoredResult);
   }
-}(this, function(Configuration, ApiClient, AggregateResult, CursoredResult, WebQuery) {
+}(this, function(Configuration, ApiClient, CursoredResult) {
   'use strict';
 
   /**
@@ -60,15 +60,17 @@
      */
 
     /**
-     * 
-     * Allows for the streaming of data as it becomes available
+     * Gets customer event data for an organization.
+     * Gets customer event data for the organization that owns the integration key.
 
-Required scopes: impersonation
-     * @param {String} version The requested API version
-     * @param {String} dataSetName The name of the dataset to stream
+The results for this endpoint are paginated by event timestamp. Use the `cursor` parameter to specify where the query begins in the dataset. Use the `limit` parameter to set the number of records returned.
+
+     * @param {String} version Must be `2`.
+
+     * @param {String} dataSetName Must be `monitor`.
      * @param {Object} optsOrCallback Optional parameters, if you are passing no optional parameters, you can either pass a null or omit this parameter entirely.
-     * @param {String} optsOrCallback.cursor The cursor value to continue querying the data with. For an intial call, use empty string
-     * @param {Number} optsOrCallback.limit The maximum number of records to return, minimum of 1, maximum of 2000. Defaults to 1000 if no value is provided (default to 1000)
+     * @param {String} optsOrCallback.cursor Specifies a pointer into the dataset where your query will begin. You can either provide an ISO DateTime or a string cursor (from the `endCursor` value in the response). If no value is provided, the query begins from seven days ago.  For example, to fetch event data beginning from January 1, 2022, set this value to `2022-01-01T00:00:00Z`. The response will include data about events starting from that date in chronological order. The response also includes an `endCursor` property. To fetch the next page of event data, call this endpoint again with `cursor` set to the previous `endCursor` value. 
+     * @param {Number} optsOrCallback.limit The maximum number of records to return. The default value is 1000. (default to 1000)
      * @param {module:api/DataSetApi~getStreamCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CursoredResult}
      */
@@ -119,73 +121,6 @@ Required scopes: impersonation
 
       return this.apiClient.callApi(
         '/api/v{version}/datasets/{dataSetName}/stream', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    };
-
-    /**
-     * (Optional) Callback function to receive the result of the postWebQuery operation. If none specified a Promise will be returned.
-     * @callback module:api/DataSetApi~postWebQueryCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/AggregateResult} data The data returned by the service call.
-     * @param {String} If a callback was specified, the response The complete HTTP response, else a Promise resolving the response Data.
-     */
-
-    /**
-     * 
-     * Allows for querying existing data using filter and aggregation clauses
-
-Required scopes: impersonation
-     * @param {String} version The requested API version
-     * @param {String} dataSetName The name of the dataset to query
-     * @param {module:model/WebQuery} webQuery A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations
-     * @param {module:api/DataSetApi~postWebQueryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/AggregateResult}
-     */
-    this.postWebQuery = function(webQuery, version, dataSetName, callback) {
-      var postBody = webQuery;
-
-      // verify the required parameter 'version' is set
-      if (version === undefined || version === null) {
-        throw new Error("Missing the required parameter 'version' when calling postWebQuery");
-      }
-
-      // verify the required parameter 'dataSetName' is set
-      if (dataSetName === undefined || dataSetName === null) {
-        throw new Error("Missing the required parameter 'dataSetName' when calling postWebQuery");
-      }
-
-      // verify the required parameter 'webQuery' is set
-      if (webQuery === undefined || webQuery === null) {
-        throw new Error("Missing the required parameter 'webQuery' when calling postWebQuery");
-      }
-
-      if (typeof callback !== 'function' &&  arguments.length && typeof arguments[arguments.length-1] === 'function'){
-        if (typeof optsOrCallback !== 'undefined') {
-          optsOrCallback = callback;
-        }
-        callback = arguments[arguments.length-1];
-      }
-
-      var pathParams = {
-        'version': version,
-        'dataSetName': dataSetName
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = AggregateResult;
-
-      return this.apiClient.callApi(
-        '/api/v{version}/datasets/{dataSetName}/web_query', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

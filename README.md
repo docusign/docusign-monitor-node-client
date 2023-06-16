@@ -16,13 +16,13 @@ commented out
 
 
 ## Requirements
-- Node 4
+- Node 12
 - Free [Developer Account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 - DocuSign Monitor account connected to your Developer account. [Here is how to create a Monitor developer account](https://developers.docusign.com/docs/monitor-api/monitor101/create-account)
 
 ## Compatibility
 
-- Node 4+
+- Node 12+
 
 ## Note:
 

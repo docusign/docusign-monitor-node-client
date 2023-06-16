@@ -11,12 +11,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['Configuration', 'ApiClient', 'model/AggregateResult', 'model/AggregateResultResult', 'model/CursoredResult', 'model/WebQuery', 'api/DataSetApi'], factory);
+    define(['Configuration', 'ApiClient', 'model/CursoredResult', 'model/DataSet', 'api/DataSetApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/AggregateResult'), require('./model/AggregateResultResult'), require('./model/CursoredResult'), require('./model/WebQuery'), require('./api/DataSetApi'));
+    module.exports = factory(require('./Configuration'), require('./ApiClient'), require('./model/CursoredResult'), require('./model/DataSet'), require('./api/DataSetApi'));
   }
-}(function(Configuration, ApiClient, AggregateResult, AggregateResultResult, CursoredResult, WebQuery, DataSetApi) {
+}(function(Configuration, ApiClient, CursoredResult, DataSet, DataSetApi) {
   'use strict';
 
   /**
@@ -61,25 +61,15 @@
      */
     ApiClient: ApiClient,
     /**
-     * The AggregateResult model constructor.
-     * @property {module:model/AggregateResult}
-     */
-    AggregateResult: AggregateResult,
-    /**
-     * The AggregateResultResult model constructor.
-     * @property {module:model/AggregateResultResult}
-     */
-    AggregateResultResult: AggregateResultResult,
-    /**
      * The CursoredResult model constructor.
      * @property {module:model/CursoredResult}
      */
     CursoredResult: CursoredResult,
     /**
-     * The WebQuery model constructor.
-     * @property {module:model/WebQuery}
+     * The DataSet model constructor.
+     * @property {module:model/DataSet}
      */
-    WebQuery: WebQuery,
+    DataSet: DataSet,
     /**
      * The DataSetApi service constructor.
      * @property {module:api/DataSetApi}
