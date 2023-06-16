@@ -21,21 +21,21 @@
     if (!root.DocusignMonitor) {
       root.DocusignMonitor = {};
     }
-    root.DocusignMonitor.CursoredResult = factory(root.DocusignMonitor.ApiClient);
+    root.DocusignMonitor.DataSet = factory(root.DocusignMonitor.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
 
 
   /**
-   * The CursoredResult model module.
-   * @module model/CursoredResult
+   * The DataSet model module.
+   * @module model/DataSet
    */
 
   /**
-   * Constructs a new <code>CursoredResult</code>.
-   * 
-   * @alias module:model/CursoredResult
+   * Constructs a new <code>DataSet</code>.
+   * Methods to fetch organization event data.
+   * @alias module:model/DataSet
    * @class
    */
   var exports = function() {
@@ -45,11 +45,11 @@
   };
 
   /**
-   * Constructs a <code>CursoredResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>DataSet</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CursoredResult} obj Optional instance to populate.
-   * @return {module:model/CursoredResult} The populated <code>CursoredResult</code> instance.
+   * @param {module:model/DataSet} obj Optional instance to populate.
+   * @return {module:model/DataSet} The populated <code>DataSet</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
