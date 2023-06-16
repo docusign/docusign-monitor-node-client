@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>oauth/Link.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-api_DataSetApi.html">api/DataSetApi</a><ul class='methods'><li data-type='method'><a href="module-api_DataSetApi.html#getStream">getStream</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#configureJWTAuthorizationFlow">configureJWTAuthorizationFlow</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#generateAccessToken">generateAccessToken</a></li><li data-type='method'><a href="module-ApiClient.html#getAuthorizationUri">getAuthorizationUri</a></li><li data-type='method'><a href="module-ApiClient.html#getBasePath">getBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#getJWTUri">getJWTUri</a></li><li data-type='method'><a href="module-ApiClient.html#getOAuthBasePath">getOAuthBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#getUserInfo">getUserInfo</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#setOAuthBasePath">setOAuthBasePath</a></li></ul></li><li><a href="module-model_AggregateResult.html">model/AggregateResult</a><ul class='methods'><li data-type='method'><a href="module-model_AggregateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AggregateResultResult.html">model/AggregateResultResult</a><ul class='methods'><li data-type='method'><a href="module-model_AggregateResultResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Aggregation.html">model/Aggregation</a><ul class='methods'><li data-type='method'><a href="module-model_Aggregation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CursoredResult.html">model/CursoredResult</a><ul class='methods'><li data-type='method'><a href="module-model_CursoredResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DataSet.html">model/DataSet</a><ul class='methods'><li data-type='method'><a href="module-model_DataSet.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OauthAccess.html">model/OauthAccess</a><ul class='methods'><li data-type='method'><a href="module-model_OauthAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RawRequest.html">model/RawRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RawRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_WebQuery.html">model/WebQuery</a><ul class='methods'><li data-type='method'><a href="module-model_WebQuery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-oauth_Link.html">oauth/Link</a><ul class='methods'><li data-type='method'><a href="module-oauth_Link.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-oauth_Organization.html">oauth/Organization</a><ul class='methods'><li data-type='method'><a href="module-oauth_Organization.html#.constructFromObject">constructFromObject</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-api_DataSetApi.html">api/DataSetApi</a><ul class='methods'><li data-type='method'><a href="module-api_DataSetApi.html#getStream">getStream</a></li></ul></li><li><a href="module-ApiClient.html">ApiClient</a><ul class='methods'><li data-type='method'><a href="module-ApiClient.html#.constructFromObject">constructFromObject</a></li><li data-type='method'><a href="module-ApiClient.html#.convertToType">convertToType</a></li><li data-type='method'><a href="module-ApiClient.html#.parseDate">parseDate</a></li><li data-type='method'><a href="module-ApiClient.html#addDefaultHeader">addDefaultHeader</a></li><li data-type='method'><a href="module-ApiClient.html#applyAuthToRequest">applyAuthToRequest</a></li><li data-type='method'><a href="module-ApiClient.html#buildCollectionParam">buildCollectionParam</a></li><li data-type='method'><a href="module-ApiClient.html#buildUrl">buildUrl</a></li><li data-type='method'><a href="module-ApiClient.html#callApi">callApi</a></li><li data-type='method'><a href="module-ApiClient.html#configureJWTAuthorizationFlow">configureJWTAuthorizationFlow</a></li><li data-type='method'><a href="module-ApiClient.html#deserialize">deserialize</a></li><li data-type='method'><a href="module-ApiClient.html#generateAccessToken">generateAccessToken</a></li><li data-type='method'><a href="module-ApiClient.html#getAuthorizationUri">getAuthorizationUri</a></li><li data-type='method'><a href="module-ApiClient.html#getBasePath">getBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#getJWTUri">getJWTUri</a></li><li data-type='method'><a href="module-ApiClient.html#getOAuthBasePath">getOAuthBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#getUserInfo">getUserInfo</a></li><li data-type='method'><a href="module-ApiClient.html#isFileParam">isFileParam</a></li><li data-type='method'><a href="module-ApiClient.html#isJsonMime">isJsonMime</a></li><li data-type='method'><a href="module-ApiClient.html#jsonPreferredMime">jsonPreferredMime</a></li><li data-type='method'><a href="module-ApiClient.html#normalizeParams">normalizeParams</a></li><li data-type='method'><a href="module-ApiClient.html#paramToString">paramToString</a></li><li data-type='method'><a href="module-ApiClient.html#setBasePath">setBasePath</a></li><li data-type='method'><a href="module-ApiClient.html#setOAuthBasePath">setOAuthBasePath</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-model_AggregateResult.html">model/AggregateResult</a><ul class='methods'><li data-type='method'><a href="module-model_AggregateResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_AggregateResultResult.html">model/AggregateResultResult</a><ul class='methods'><li data-type='method'><a href="module-model_AggregateResultResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Aggregation.html">model/Aggregation</a><ul class='methods'><li data-type='method'><a href="module-model_Aggregation.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_CursoredResult.html">model/CursoredResult</a><ul class='methods'><li data-type='method'><a href="module-model_CursoredResult.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_DataSet.html">model/DataSet</a><ul class='methods'><li data-type='method'><a href="module-model_DataSet.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_Filter.html">model/Filter</a><ul class='methods'><li data-type='method'><a href="module-model_Filter.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_OauthAccess.html">model/OauthAccess</a><ul class='methods'><li data-type='method'><a href="module-model_OauthAccess.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_RawRequest.html">model/RawRequest</a><ul class='methods'><li data-type='method'><a href="module-model_RawRequest.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_UserInfo.html">model/UserInfo</a><ul class='methods'><li data-type='method'><a href="module-model_UserInfo.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-model_WebQuery.html">model/WebQuery</a><ul class='methods'><li data-type='method'><a href="module-model_WebQuery.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-oauth_Account.html">oauth/Account</a></li><li><a href="module-oauth_Link.html">oauth/Link</a><ul class='methods'><li data-type='method'><a href="module-oauth_Link.html#.constructFromObject">constructFromObject</a></li></ul></li><li><a href="module-oauth_Organization.html">oauth/Organization</a><ul class='methods'><li data-type='method'><a href="module-oauth_Organization.html#.constructFromObject">constructFromObject</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">oauth/Link.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+
+/**
+ * DocuSign REST API
+ * The DocuSign REST API provides you with a powerful, convenient, and simple Web services API for interacting with DocuSign.
+ *
+ * OpenAPI spec version: v2
+ * Contact: devcenter@docusign.com
+ *
+ * NOTE: This class is auto generated. Do not edit the class manually and submit a new issue instead.
+ *
+ */
+
+(function(root, factory) {
+  if (typeof define === 'function' &amp;&amp; define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['ApiClient', 'oauth/Account'], factory);
+  } else if (typeof module === 'object' &amp;&amp; module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    module.exports = factory(require('../ApiClient'));
+  } else {
+    // Browser globals (root is window)
+    if (!root.Docusign) {
+      root.Docusign = {};
+    }
+  }
+}(this, function(ApiClient,  Account) {
+  'use strict';
+  /**
+   * The Link model module.
+   * @module oauth/Link
+   * @version 3.0.0
+   */
+
+  /**
+   * Constructs a new &lt;code>Link&lt;/code>.
+   * @alias module:oauth/Link
+   * @class
+   */
+  var exports = function() {
+    var _this = this;
+
+
+  };
+
+  /**
+   * Constructs a &lt;code>Link&lt;/code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from &lt;code>data&lt;/code> to &lt;code>obj&lt;/code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:oauth/Link} obj Optional instance to populate.
+   * @return {module:oauth/Link} The populated &lt;code>Link&lt;/code> instance.
+   */
+  exports.constructFromObject = function(data, obj) {
+    var ApiClient = require('../ApiClient');
+
+    if (data) {
+      obj = obj || new exports();
+
+      if (data.hasOwnProperty('rel')) {
+        obj['rel'] = ApiClient.convertToType(data['rel'], 'String');
+      }
+      if (data.hasOwnProperty('href')) {
+        obj['href'] = ApiClient.convertToType(data['href'], 'String');
+      }
+    }
+
+    return obj;
+  }
+
+  /**
+   *
+   * @member {String} rel
+   */
+  exports.prototype['rel'] = undefined;
+  /**
+   *
+   * @member {String} href
+   */
+  exports.prototype['href'] = undefined;
+
+
+  return exports;
+}));</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Fri Jun 16 2023 14:59:47 GMT-0700 (Pacific Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
