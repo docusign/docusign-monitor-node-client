@@ -114,7 +114,7 @@ The results for this endpoint are paginated by event timestamp. Use the `cursor`
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['docusignAccessCode'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CursoredResult;
