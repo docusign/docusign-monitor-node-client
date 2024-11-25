@@ -72,10 +72,7 @@ describe("SDK Unit Tests:", function (done) {
         expiresIn
       )
       .then(function (res) {
-        apiClient.addDefaultHeader(
-          "Authorization",
-          "Bearer " + res.body.access_token
-        );
+        apiClient.setJWTToken(res.body.access_token);
 
         apiClient
           .getUserInfo(res.body.access_token)
