@@ -1,6 +1,6 @@
 {
   "name": "docusign-monitor",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Docusign Node.js API client.",
   "license": "MIT",
   "main": "src/index.js",

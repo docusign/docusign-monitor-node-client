@@ -1,6 +1,6 @@
-const PRODUCTION_BASE_PATH = 'https://lens.docusign.net';
-const DEMO_BASE_PATH = 'https://lens-d.docusign.net';
-const STAGE_BASE_PATH = 'https://lens-s.docusign.net';
+const PRODUCTION_BASE_PATH = 'https://api.docusign.com';
+const DEMO_BASE_PATH = 'https://api-d.docusign.com';
+const STAGE_BASE_PATH = 'https://api-s.docusign.com';
 
 module.exports = {
   BasePath: {
