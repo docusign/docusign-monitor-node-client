@@ -21,6 +21,7 @@ const basePath = restApi.BasePath.DEMO;
 const oAuthBasePath = oAuth.BasePath.DEMO;
 
 const userId = config.userId;
+let resolvedOrganizationId;
 const RedirectURI = "https://www.docusign.com/api";
 const privateKeyFilename = "keys/docusign_private_key.txt";
 const expiresIn = 3600;
@@ -78,6 +79,14 @@ describe("SDK Unit Tests:", function (done) {
           .getUserInfo(res.body.access_token)
           .then(function (userInfo) {
             console.log("LoginInformation: " + JSON.stringify(userInfo));
+
+            if (!resolvedOrganizationId) {
+              const accounts = userInfo && userInfo.accounts ? userInfo.accounts : [];
+              const firstAccount = accounts.length > 0 ? accounts[0] : null;
+              const organization = firstAccount && firstAccount.organization;
+              resolvedOrganizationId = organization && organization.organization_id;
+            }
+
             done();
           })
           .catch(function (error) {
@@ -192,18 +201,30 @@ describe("SDK Unit Tests:", function (done) {
     done();
   });
 
-  it("retrieves data set stream", function (done) {
-    const dataSetApi = new docusign.DataSetApi(apiClient);
-    const datasetName = "monitor";
-    const version = "2.0";
-    dataSetApi
-      .getStream(version, datasetName)
+  it("retrieves monitor stream", function (done) {
+    const docuMonitorApi = new docusign.DocuMonitorApi(apiClient);
+    docuMonitorApi
+      .stream(resolvedOrganizationId, {
+        cursor: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+        limit: 100,
+      })
       .then(function (data) {
         assert.notEqual(data, undefined);
+        assert.ok(data.endCursor);
+        assert.ok(Array.isArray(data.resultData));
+
+        if (data.resultData.length > 0) {
+          assert.ok(data.resultData[0].eventId);
+        }
+
         return done();
       })
       .catch(function (e) {
-        return done(e);
+        if (e instanceof Error) {
+          return done(e);
+        }
+
+        return done(new Error(JSON.stringify(e)));
       });
   });
 

@@ -3,6 +3,11 @@
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v4.0.0] - Monitor API v2.0-3.0.1 - 2026-07-29
+### Changed
+- Added support for version v2.0-3.0.1 of the DocuSign Monitor API.
+- Updated the SDK release version.
+
 ## [v3.0.0] - Monitor API v2.0-2.0.0 - 2024-11-20
 ### Breaking Changes
 

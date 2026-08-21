@@ -155,13 +155,13 @@
     if (basePath == null) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
-    if (basePath.includes("https://lens-s")) {
+    if (basePath.includes("https://api-s")) {
       return exports.prototype.OAuth.BasePath.STAGE;
     }
-    if (basePath.includes("https://lens-d")) {
+    if (basePath.includes("https://api-d")) {
       return exports.prototype.OAuth.BasePath.DEMO;
     }
-    if (basePath.includes("https://lens.")) {
+    if (basePath.includes("https://api.")) {
       return exports.prototype.OAuth.BasePath.PRODUCTION;
     }
     return exports.prototype.OAuth.BasePath.PRODUCTION;
